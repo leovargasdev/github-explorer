@@ -1,5 +1,6 @@
-import React, {FormEvent, useState} from 'react';
-import {FiChevronRight} from 'react-icons/fi';
+import React, { FormEvent, useState, useEffect } from 'react';
+import { FiChevronRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 import { Title, Error, Form, Repositories } from './styles';
@@ -11,18 +12,24 @@ interface Repository {
   owner: {
     login: string;
     avatar_url: string;
-  }
+  };
 }
 
 const Dashboard: React.FC = () => {
   const [newrepository, setNewRepository] = useState('');
   const [inputError, setInputError] = useState('');
-  const [repositories, setRepositories] = useState<Repository[]>([]);
+  const [repositories, setRepositories] = useState<Repository[]>(() => {
+    const storagedRepos = localStorage.getItem('@githubexplorer:repositories');
+    if (storagedRepos) return JSON.parse(storagedRepos);
+    return [];
+  });
 
-  async function handleAddRepository(event: FormEvent<HTMLFormElement>): Promise<void>{
+  async function handleAddRepository(
+    event: FormEvent<HTMLFormElement>,
+  ): Promise<void> {
     event.preventDefault();
 
-    if(!newrepository){
+    if (!newrepository) {
       setInputError('Digite um respositório válido');
       return;
     }
@@ -34,40 +41,47 @@ const Dashboard: React.FC = () => {
       setRepositories([...repositories, repo]);
       setNewRepository('');
       setInputError('');
-    } catch(err){
+    } catch (err) {
       setInputError('Erro na busca por esse repositório');
     }
   }
 
+  useEffect(() => {
+    localStorage.setItem(
+      '@githubexplorer:repositories',
+      JSON.stringify(repositories),
+    );
+  }, [repositories]);
+
   return (
     <>
-      <img src={logoImg} alt="Github Explorer"/>
+      <img src={logoImg} alt="Github Explorer" />
       <Title>Repositórios Github</Title>
       <Form hasError={!!inputError} onSubmit={handleAddRepository}>
         <input
           value={newrepository}
-          onChange={(e) => setNewRepository(e.target.value)}
+          onChange={e => setNewRepository(e.target.value)}
           placeholder="Digite o nome do repositório"
         />
         <button type="submit">Pesquisar Repositório</button>
       </Form>
 
-      { inputError && <Error>{inputError}</Error> }
+      {inputError && <Error>{inputError}</Error>}
 
       <Repositories>
         {repositories.map(repo => (
-          <a key={repo.full_name} href="/repository">
-            <img src={repo.owner.avatar_url} alt={repo.owner.login}/>
+          <Link key={repo.full_name} to={`/repositories/${repo.full_name}`}>
+            <img src={repo.owner.avatar_url} alt={repo.owner.login} />
             <div>
               <strong>{repo.full_name}</strong>
               <span>{repo.description}</span>
             </div>
-            <FiChevronRight size={40}/>
-          </a>
+            <FiChevronRight size={40} />
+          </Link>
         ))}
       </Repositories>
     </>
   );
-}
+};
 
 export default Dashboard;
