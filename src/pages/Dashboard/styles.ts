@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { shade } from 'polished';
+import { shade, lighten } from 'polished';
 
 interface FormProps {
   hasError: boolean;
@@ -7,7 +7,7 @@ interface FormProps {
 
 export const Title = styled.h1`
   font-size: 48px;
-  color: #3a3a3a;
+  color: #f0f0f5;
   margin-top: 80px;
 `;
 
@@ -46,7 +46,7 @@ export const Form = styled.form<FormProps>`
   button {
     width: 210px;
     height: 70px;
-    background: #04d361;
+    background: #115173;
     border-radius: 0 5px 5px 0;
     border: 0;
     color: #fff;
@@ -54,7 +54,7 @@ export const Form = styled.form<FormProps>`
     transition: background-color 0.3s;
 
     &:hover {
-      background: ${shade(0.1, '#04d361')};
+      background: ${shade(0.1, '#115173')};
     }
   }
 `;
@@ -66,18 +66,20 @@ export const Repositories = styled.div`
   a {
     display: flex;
     align-items: center;
-    background: #fff;
+    background: #053f5e;
     width: 100%;
     padding: 24px 20px;
     text-decoration: none;
-    transition: transform 0.2s;
+    border-radius: 4px;
+    transition-duration: 0.5s;
 
     &:hover {
       transform: translateX(10px);
+      background: ${lighten(0.1, '#053f5e')};
     }
 
     & + a {
-      margin-bottom: 10px;
+      margin-top: 10px;
     }
   }
 
@@ -95,13 +97,13 @@ export const Repositories = styled.div`
 
     strong {
       font-size: 20px;
-      color: #3d3d4d;
+      color: #ffd700;
     }
 
     span {
       font-size: 16px;
       font-weight: 300;
-      color: #a8a8b3;
+      color: #f0f0f5;
     }
   }
 

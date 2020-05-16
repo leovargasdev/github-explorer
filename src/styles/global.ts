@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import imgBackground from '../assets/logo-git.svg'
+import imgBackground from '../assets/logo-git.svg';
 
 export default createGlobalStyle`
   *{
@@ -11,7 +11,7 @@ export default createGlobalStyle`
   }
 
   body{
-    background: #F0F0F5 url(${imgBackground}) no-repeat 70% top;
+    background: #022c43 url(${imgBackground}) no-repeat 70% top;
     -webkit-font-smoothing: antialiased;
   }
 
