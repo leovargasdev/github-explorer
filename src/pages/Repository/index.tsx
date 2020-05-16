@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { FiChevronRight, FiChevronsLeft } from 'react-icons/fi';
+import {
+  GoIssueClosed,
+  GoRepoForked,
+  GoStar,
+  GoIssueOpened,
+} from 'react-icons/go';
 import { useRouteMatch, Link } from 'react-router-dom';
 
 import { Header, RepositoryInfo, Issues } from './styles';
@@ -68,16 +74,25 @@ const Repository: React.FC = () => {
           </header>
           <ul>
             <li>
+              <span>
+                <GoStar size={20} />
+                Start
+              </span>
               <strong>{repository.stargazers_count}</strong>
-              <span>Start</span>
             </li>
             <li>
+              <span>
+                <GoRepoForked size={20} />
+                Forks
+              </span>
               <strong>{repository.forks_count}</strong>
-              <span>Forks</span>
             </li>
             <li>
+              <span>
+                <GoIssueOpened size={20} />
+                Issues Abertas
+              </span>
               <strong>{repository.open_issues_count}</strong>
-              <span>Issues Abertas</span>
             </li>
           </ul>
         </RepositoryInfo>

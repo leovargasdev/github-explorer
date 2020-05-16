@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 
 export const Header = styled.header`
   display: flex;
@@ -13,7 +14,7 @@ export const Header = styled.header`
     transition: color 0.3s;
 
     &:hover {
-      color: #666;
+      color: #ffd700;
     }
 
     svg {
@@ -42,12 +43,12 @@ export const RepositoryInfo = styled.section`
 
       strong {
         font-size: 36px;
-        color: #3d3d4d;
+        color: #ffd700;
       }
 
       span {
         font-size: 20px;
-        color: #737380;
+        color: #f0f0f5;
       }
     }
   }
@@ -55,23 +56,37 @@ export const RepositoryInfo = styled.section`
   ul {
     display: flex;
     list-style: none;
+    justify-content: center;
     margin-top: 40px;
 
     li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: 1px solid #085f8e;
+      border-radius: 3px;
+      font-size: 22px;
+
       & + li {
         margin-left: 80px;
       }
 
-      strong {
-        display: block;
-        font-size: 36px;
-        color: #3d3d4d;
+      span {
+        display: flex;
+        align-items: center;
+        color: #f0f0f5;
+        padding: 10px;
+        background: #115173;
+        border-right: 1px solid #085f8e;
+        svg {
+          margin-right: 4px;
+        }
       }
 
-      span {
+      strong {
         display: block;
-        font-size: 20px;
-        color: #6c6c80;
+        color: #085f8e;
+        padding: 10px;
       }
     }
   }
@@ -83,14 +98,16 @@ export const Issues = styled.div`
   a {
     display: flex;
     align-items: center;
-    background: #fff;
+    background: #053f5e;
     width: 100%;
     padding: 24px 20px;
     text-decoration: none;
-    transition: transform 0.2s;
+    border-radius: 4px;
+    transition-duration: 0.5s;
 
     &:hover {
       transform: translateX(10px);
+      background: ${lighten(0.1, '#053f5e')};
     }
 
     & + a {
@@ -106,13 +123,13 @@ export const Issues = styled.div`
 
     strong {
       font-size: 20px;
-      color: #3d3d4d;
+      color: #ffd700;
     }
 
     span {
       font-size: 16px;
       font-weight: 300;
-      color: #a8a8b3;
+      color: #f0f0f5;
     }
   }
 
