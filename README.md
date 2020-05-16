@@ -46,14 +46,14 @@
 A principal motivo para a criação deste projeto foi melhorar os meus conhecimentos em **React** e **TypeScript**, usando
 assim esse projeto como uma ferramenta de estudo.
 
-Essa ferramenta tem como objetivo listar repositórios Github, nele o usuário poderá adicionar repositórios através de um input, ao adicionar um novo repositório, o usuário poderá ver mais detalhes sobre o mesmo, como o número de starts, forkeds, issues abertas. Todos os dados são armazenado no [localStoraged](https://javascript.info/localstorage) do navegador.
+Essa ferramenta tem como objetivo listar repositórios Github, nele o usuário poderá adicionar repositórios através de um input, ao adicionar um novo repositório, o usuário poderá ver mais detalhes sobre o mesmo, como o número de starts, forkeds, issues abertas. Todos os dados são armazenado no [LocalStorage](https://javascript.info/localstorage) do navegador.
 
 ## :muscle: Contribuir
 
 Como seres humanos todos nós somos tolerantes a falhas, então se você notar algum erro ou tenha alguma sugestão sobre o projeto, eu ficarei feliz com a sua contribuição, então faça o `fork` e clone o projeto a partir do seu usuário.
 
 ```bash
-$ git clone https://github.com/SEU-NOME-DE-USUARIO/fast-feet.git
+$ git clone https://github.com/SEU-NOME-DE-USUARIO/github-explorer-repositories.git
 ```
 Gere uma nova ramificação do projeto, no exemplo a seguir vou chamar o branch de `minha-alteracao`, mas você pode dar o nome que quiser.
 
