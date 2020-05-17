@@ -52,12 +52,30 @@ Essa ferramenta tem como objetivo listar repositórios Github. O usuário pode a
 
 O motivo da criação desta aplicação foi melhorar os meus conhecimentos perante as linguagens **React** e **TypeScript**, usando assim esse projeto como uma ferramenta de estudo.
 
+## 📥 Instalação e execução
+
+Faça um clone desse repositório e acesse o diretório:
+
+```bash
+$ git clone https://github.com/LeeonardoVargas/github-explorer.git && cd github-explorer
+```
+
+Instalando as dependências e executando o projeto:
+
+```bash
+$ yarn install
+
+$ yarn start
+```
+
+Abra o seu navegador e acesse a url **http://localhost:3000**.
+
 ## :muscle: Contribuir
 
 Como seres humanos todos nós somos tolerantes a falhas, então se você notar algum erro ou tenha alguma sugestão sobre o projeto, eu ficarei feliz com a sua contribuição, então faça o `fork` e clone o projeto a partir do seu usuário.
 
 ```bash
-$ git clone https://github.com/SEU-NOME-DE-USUARIO/github-explorer-repositories.git
+$ git clone https://github.com/SEU-NOME-DE-USUARIO/github-explorer.git
 ```
 Gere uma nova ramificação do projeto, no exemplo a seguir vou chamar o branch de `minha-alteracao`, mas você pode dar o nome que quiser.
 
