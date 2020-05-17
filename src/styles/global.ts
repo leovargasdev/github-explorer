@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import media from 'styled-media-query';
 
 import imgBackground from '../assets/logo-git.svg';
 
@@ -24,6 +25,13 @@ export default createGlobalStyle`
     margin: 0 auto;
     padding: 40px 20px;
   }
+
+  ${media.lessThan('large')`
+    #root{
+      width: 100%;
+      padding: 10px 8px;
+    }
+  `}
 
   button{
     cursor: pointer;

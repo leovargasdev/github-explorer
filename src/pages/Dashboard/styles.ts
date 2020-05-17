@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { shade, lighten } from 'polished';
+import media from 'styled-media-query';
 
 interface FormProps {
   hasError: boolean;
@@ -8,7 +9,12 @@ interface FormProps {
 export const Title = styled.h1`
   font-size: 48px;
   color: #f0f0f5;
-  margin-top: 80px;
+  margin-top: 60px;
+
+  ${media.lessThan('large')`
+    font-size: 32px;
+    margin-top: 25px;
+  `}
 `;
 
 export const Error = styled.span`
@@ -18,9 +24,8 @@ export const Error = styled.span`
 `;
 
 export const Form = styled.form<FormProps>`
-  margin-top: 40px;
+  margin-top: 12px;
   max-width: 700px;
-
   display: flex;
 
   input {
@@ -57,10 +62,20 @@ export const Form = styled.form<FormProps>`
       background: ${shade(0.1, '#115173')};
     }
   }
+
+  ${media.lessThan('large')`
+    max-width: 100%;
+    input {
+      padding: 0 18px;
+    }
+    input, button {
+      height: 50px;
+    }
+  `}
 `;
 
 export const Repositories = styled.div`
-  margin-top: 80px;
+  margin-top: 60px;
   max-width: 700px;
 
   a {
@@ -79,7 +94,7 @@ export const Repositories = styled.div`
     }
 
     & + a {
-      margin-top: 10px;
+      margin-top: 12px;
     }
   }
 
@@ -111,4 +126,22 @@ export const Repositories = styled.div`
     margin-left: auto;
     color: #cbcbd6;
   }
+
+  ${media.lessThan('large')`
+    width: 100%;
+    margin-top: 25px;
+
+    a {
+      padding: 15px 5px;
+    }
+
+    div {
+      strong {
+        font-size: 17px;
+      }
+      span {
+        font-size: 13px;
+      }
+    }
+  `}
 `;

@@ -39,18 +39,18 @@
 -  [Prettier](https://prettier.io/)
 -  [ESLint](https://eslint.org/)
 -  [YARN](https://yarnpkg.com/)
+-  [Axios](https://github.com/axios/axios)
 -  [Typescript](https://www.typescriptlang.org/)
 -  [React](https://pt-br.reactjs.org/)
 -  [Styled-components](https://www.styled-components.com/)
 -  [Github-Octicons-Icons](https://primer.style/octicons/)
 -  [React-Router](https://reacttraining.com/react-router/web/guides/quick-start)
 
-## 💻 Objetivo do Projeto
+## 💻 Projeto
 
-A principal motivo para a criação deste projeto foi melhorar os meus conhecimentos em **React** e **TypeScript**, usando
-assim esse projeto como uma ferramenta de estudo.
+Essa ferramenta tem como objetivo listar repositórios Github. O usuário pode adicionar um novo repositório através de um campo de busca, ao inserir o valor no input é feito uma busca na [api do Github](https://developer.github.com/v3/). Também é possível ver os detalhes sobre os repositórios, como o número de starts, forkeds, issues abertas. Todos os dados são armazenados no [localStorage](https://javascript.info/localstorage) do navegador.
 
-Essa ferramenta tem como objetivo listar repositórios Github, nele o usuário poderá adicionar repositórios através de um input, ao adicionar um novo repositório, o usuário poderá ver mais detalhes sobre o mesmo, como o número de starts, forkeds, issues abertas. Todos os dados são armazenado no [LocalStorage](https://javascript.info/localstorage) do navegador.
+O motivo da criação desta aplicação foi melhorar os meus conhecimentos perante as linguagens **React** e **TypeScript**, usando assim esse projeto como uma ferramenta de estudo.
 
 ## :muscle: Contribuir
 
