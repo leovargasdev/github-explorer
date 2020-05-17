@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 import { Title, Error, Form, Repositories } from './styles';
-import logoImg from '../../assets/logo-github-explorer.svg';
+import logo from '../../assets/logo.png';
 
 import reposDefault from './content';
 
@@ -57,7 +57,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
-      <img src={logoImg} alt="Github Explorer" />
+      <img src={logo} alt="Github Explorer" width="300" height="auto"/>
       <Title>Repositórios Github</Title>
       <Form hasError={!!inputError} onSubmit={handleAddRepository}>
         <input

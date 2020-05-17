@@ -12,7 +12,7 @@ import { useRouteMatch, Link } from 'react-router-dom';
 import pt from 'date-fns/locale/pt';
 
 import { Header, RepositoryInfo, Issues } from './styles';
-import logoImg from '../../assets/logo-github-explorer.svg';
+import logo from '../../assets/logo.png';
 import api from '../../services/api';
 
 interface RepositoryParams {
@@ -58,7 +58,7 @@ const Repository: React.FC = () => {
   return (
     <>
       <Header>
-        <img src={logoImg} alt="Github Explorer" />
+        <img src={logo} alt="Github Explorer" width="300" height="auto"/>
         <Link to="/">
           <GoChevronLeft size={18} />
           VOLTAR
