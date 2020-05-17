@@ -6,6 +6,8 @@ import api from '../../services/api';
 import { Title, Error, Form, Repositories } from './styles';
 import logoImg from '../../assets/logo-github-explorer.svg';
 
+import reposDefault from './content';
+
 interface Repository {
   full_name: string;
   description: string;
@@ -21,7 +23,7 @@ const Dashboard: React.FC = () => {
   const [repositories, setRepositories] = useState<Repository[]>(() => {
     const storagedRepos = localStorage.getItem('@githubexplorer:repositories');
     if (storagedRepos) return JSON.parse(storagedRepos);
-    return [];
+    return reposDefault;
   });
 
   async function handleAddRepository(
@@ -37,8 +39,8 @@ const Dashboard: React.FC = () => {
     try {
       const response = await api.get<Repository>(`repos/${newrepository}`);
       const repo = response.data;
-
-      setRepositories([...repositories, repo]);
+      // Fazendo a inserção no ínicio da lista
+      setRepositories([repo, ...repositories]);
       setNewRepository('');
       setInputError('');
     } catch (err) {

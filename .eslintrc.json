@@ -32,6 +32,7 @@
       "prettier/prettier": "error",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
+      "@typescript-eslint/camelcase": "off",
       "react/jsx-filename-extension": [1, {"extensions": [".tsx"]}],
       "react/jsx-one-expression-per-line": "off",
       "import/prefer-default-export": "off",

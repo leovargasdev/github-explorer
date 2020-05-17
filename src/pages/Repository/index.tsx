@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FiChevronRight, FiChevronsLeft } from 'react-icons/fi';
-import {
-  GoIssueClosed,
-  GoRepoForked,
-  GoStar,
-  GoIssueOpened,
-} from 'react-icons/go';
+import { GoRepoForked, GoStar, GoIssueOpened } from 'react-icons/go';
 import { useRouteMatch, Link } from 'react-router-dom';
 
 import { Header, RepositoryInfo, Issues } from './styles';
