@@ -38,7 +38,7 @@
 -  [Typescript](https://www.typescriptlang.org/)
 -  [React](https://pt-br.reactjs.org/)
 -  [Styled-components](https://www.styled-components.com/)
--  [React-Icons](https://react-icons.netlify.com/)
+-  [Github-Octicons-Icons](https://primer.style/octicons/)
 -  [React-Router](https://reacttraining.com/react-router/web/guides/quick-start)
 
 ## 💻 Objetivo do Projeto

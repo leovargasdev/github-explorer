@@ -126,10 +126,23 @@ export const Issues = styled.div`
       color: #ffd700;
     }
 
-    span {
+    span,
+    p {
       font-size: 16px;
       font-weight: 300;
       color: #f0f0f5;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      align-self: flex-start;
+      font-size: 12px;
+
+      svg {
+        padding-right: 5px;
+        color: #f0f0f5;
+      }
     }
   }
 

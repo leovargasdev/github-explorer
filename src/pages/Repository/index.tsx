@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { FiChevronRight, FiChevronsLeft } from 'react-icons/fi';
-import { GoRepoForked, GoStar, GoIssueOpened } from 'react-icons/go';
+import {
+  GoRepoForked,
+  GoStar,
+  GoIssueOpened,
+  GoCalendar,
+  GoChevronLeft,
+  GoChevronRight,
+} from 'react-icons/go';
+import { format } from 'date-fns';
 import { useRouteMatch, Link } from 'react-router-dom';
+import pt from 'date-fns/locale/pt';
 
 import { Header, RepositoryInfo, Issues } from './styles';
 import logoImg from '../../assets/logo-github-explorer.svg';
@@ -30,6 +38,7 @@ interface Issue {
   user: {
     login: string;
   };
+  created_at: string;
 }
 
 const Repository: React.FC = () => {
@@ -51,8 +60,8 @@ const Repository: React.FC = () => {
       <Header>
         <img src={logoImg} alt="Github Explorer" />
         <Link to="/">
-          <FiChevronsLeft size={18} />
-          voltar
+          <GoChevronLeft size={18} />
+          VOLTAR
         </Link>
       </Header>
       {repository && (
@@ -97,10 +106,18 @@ const Repository: React.FC = () => {
         {issues.map(issue => (
           <a key={issue.id} href={issue.html_url}>
             <div>
+              <span>
+                <GoCalendar size={14} />
+                {format(
+                  new Date(issue.created_at),
+                  "EEEE', 'dd' de 'MMMM' de 'yyyy",
+                  { locale: pt },
+                )}
+              </span>
               <strong>{issue.title}</strong>
-              <span>{issue.user.login}</span>
+              <p>{issue.user.login}</p>
             </div>
-            <FiChevronRight size={40} />
+            <GoChevronRight size={40} />
           </a>
         ))}
       </Issues>

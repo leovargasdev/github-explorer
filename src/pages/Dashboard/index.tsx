@@ -1,5 +1,5 @@
 import React, { FormEvent, useState, useEffect } from 'react';
-import { FiChevronRight } from 'react-icons/fi';
+import { GoChevronRight } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
@@ -78,7 +78,7 @@ const Dashboard: React.FC = () => {
               <strong>{repo.full_name}</strong>
               <span>{repo.description}</span>
             </div>
-            <FiChevronRight size={40} />
+            <GoChevronRight size={40} />
           </Link>
         ))}
       </Repositories>
