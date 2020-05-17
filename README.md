@@ -30,6 +30,10 @@
   <a href="#-licença">Licença</a>
 </p>
 
+<p align="center">
+  <img alt="Gif Github Explorer" src=".github/gitbub-explorer.gif" />
+</p>
+
 ## :rocket: Tecnologias
 
 -  [Prettier](https://prettier.io/)
